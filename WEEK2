@@ -1,0 +1,17 @@
+name = "Jackie Lyn A. Cumamao"
+age = 18
+height = 1.62
+work = False
+
+print("Full Name: Jackie Lyn A. Cumamao")
+print(type(name))
+
+print("\nAge: 18")
+print(type(age))
+
+print("\nHeight in meters: 1.62")
+print(type(height))
+
+print("\nCurrently Working?: False")
+print(type(work))
+
