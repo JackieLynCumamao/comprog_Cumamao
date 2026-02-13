@@ -1,8 +1,0 @@
-Name = ""
-Age = 0
-
-Name = input("Enter name: ")
-Age = int(input("Enter age: "))
-
-print("Hello I'm ", Name + "!")
-print("I'm currently", Age , "years old!")
