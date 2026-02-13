@@ -1,8 +1,0 @@
-Password = "user123"
-Pass = input("Enter Password: ")
-
-if Password == Pass:
-    print('\n\nLogged In')
-
-else:
-    print('\n\nAccess Denied')
