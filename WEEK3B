@@ -1,0 +1,7 @@
+while True:
+    Password = input('Enter Password: ')
+    if (any(ch.isalpha() for ch in Password) and any(ch.isdigit() for ch in Password)):
+        print('\n\n\nPassword Accepted')
+        break
+    else:
+        print('\n\n\nInvalid Password. Try Again')
