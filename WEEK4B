@@ -1,0 +1,26 @@
+x = 300
+
+print("Find the closest number to", x)
+
+val1 = int(input("Enter first number: "))
+val2 = int(input("\nEnter second number: "))
+val3 = int(input("\nEnter third number: "))
+
+d1 = abs(val1 - x)
+d2 = abs(val2 - x)
+d3 = abs(val3 - x)
+
+if d1 == d2 == d3:
+    print(f"\nValues 1, 2 and 3, {val1}, {val2}, {val3} are all equally closest to {x}")
+elif d1 == d2 and d1 < d3:
+    print(f"\nValue 1 and 2, {val1} and {val2} are both the closest to {x}")
+elif d1 == d3 and d1 < d2:
+    print(f"\nValue 1 and 3, {val1} and {val3} are both the closest to {x}")
+elif d2 == d3 and d2 < d1:
+    print(f"\nValue 2 and 3, {val2} and {val3} are both the closest to {x}")
+elif d1 < d2 and d1 < d3:
+    print(f"\nValue 1, {val1} is the closest to {x}")
+elif d2 < d1 and d2 < d3:
+    print(f"\nValue 2, {val2} is the closest to {x}")
+else:
+    print(f"\nValue 3, {val3} is the closest to {x}")
