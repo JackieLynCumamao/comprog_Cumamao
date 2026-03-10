@@ -1,0 +1,72 @@
+class Ecart:
+    
+    def __init__(self):
+        self.cart = []
+        
+    def a_item(self, item):
+        self.cart.append(item)
+        print(item, "added.")
+        
+    def r_item(self, item):
+        found = False
+        for i in self.cart:
+            if i.lower() == item.lower():
+                self.cart.remove(i)
+                print(i, "removed.")
+                found = True
+                break
+        
+        if not found:
+            print("Item not found.")
+            
+    def v_item(self):
+        if len(self.cart) == 0:
+            print("Cart Empty.")
+        else:
+            print("Items in cart:")
+            for item in self.cart:
+                print(item)
+    
+    def c_item(self):
+        if len(self.cart) == 0:
+            print("Cart is Empty. Please add items to checkout.")
+            
+        else:
+            print("Items to Check out:")
+            for item in self.cart:
+                print(item)
+            print("Order Successfully Checked Out!")
+            
+            
+Cart = Ecart()
+
+while True:
+    print("------ECart------")
+    print("A - Add Item")
+    print("R - Remove Item")
+    print("V - View Item/s")
+    print("C - Checkout Item/s")
+    print("E - Exit")
+    
+    letter = input("Enter Letter: ").upper()
+    
+    if letter == 'A':
+        item = input("Enter Item Name: ")
+        Cart.a_item(item)
+        
+    elif letter == 'R':
+        item = input("Remove Item(Name): ")
+        Cart.r_item(item)
+        
+    elif letter == 'V':
+        Cart.v_item()
+        
+    elif letter == 'C':
+        Cart.c_item()
+        
+    elif letter == 'E':
+        print("\n\nThank you for Ecarting ^w^)/")
+        break
+    
+    else:
+        print("Invalid. Try Again")
