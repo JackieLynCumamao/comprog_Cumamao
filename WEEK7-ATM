@@ -1,0 +1,52 @@
+balance = 1000
+
+while True:
+    try:
+        print("\n=== ATM System ===")
+        print("1. Withdraw Money")
+        print("2. Check Balance")
+        print("3. Exit")
+        choice = int(input("\nEnter your choice (1-3): "))
+
+        if choice == 1:
+            amount = float(input("Enter amount to withdraw: "))
+
+            if amount > balance:
+                print("Withdrawal denied: INSUFICIENT FUNDS")
+
+                print("\n=== OPTIONS ===")
+                print("1. Try Again")
+                print("2. Check Balance")
+                print("3. Exit")
+                option = int(input("Choose option: "))
+
+                if option == 1:
+                    continue
+                elif option == 2:
+                    print("Current Balance:", balance)
+                elif option == 3:
+                    print("Exiting program...")
+                    break
+                else:
+                    print("Invalid option.")
+
+            elif amount <= 0:
+                print("Invalid amount. Please enter a positive value.")
+
+            else:
+                balance -= amount
+                print("Withdrawal successful!")
+                print("Remaining Balance:", balance)
+
+        elif choice == 2:
+            print("Current Balance:", balance)
+
+        elif choice == 3:
+            print("Thank you!")
+            break
+
+        else:
+            print("Invalid choice. Please select 1-3.")
+
+    except ValueError:
+        print("Invalid input! Please enter numbers only.")
