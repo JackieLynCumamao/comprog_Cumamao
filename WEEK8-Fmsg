@@ -1,0 +1,50 @@
+def c_file():
+    try:
+        file = open("message.txt", "x")
+        print("File created successfully!")
+        file.close()
+    except FileExistsError:
+        print("Error: File already exists.")
+
+def send_message():
+    try:
+        message = input("Enter your message: ")
+        file = open("message.txt", "a")
+        file.write(message + "\n")
+        file.close()
+        print("Message sent!")
+    except Exception as e:
+        print("Error:", e)
+
+def view_messages():
+    try:
+        file = open("message.txt", "r")
+        print("\n--- Messages ---")
+        print(file.read())
+        file.close()
+    except FileNotFoundError:
+        print("Error: File not found.")
+
+def menu():
+    while True:
+        print("\n=== File Handling - Messaging App ===")
+        print("1. Send message")
+        print("2. View messages")
+        print("3. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            send_message()
+        elif choice == "2":
+            view_messages()
+        elif choice == "3":
+            print("\nThank you for using our Messaging App!")
+            print("Exiting Program.....")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+# MAIN PROGRAM
+c_file()
+menu()
