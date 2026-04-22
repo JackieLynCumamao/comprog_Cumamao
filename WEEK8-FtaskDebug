@@ -1,0 +1,47 @@
+def c_file():
+    try:
+        file = open("task.txt", "x")
+        print("File created successfully!")
+        file.close()
+    except FileExistsError:
+        print("File already Exist")
+
+def a_task():
+    try:
+        task = input("Enter task: ")
+        file = open("task.txt", "a")
+        file.write(task + "\n") #Used message instead of task
+        file.close()
+        print("task added!!!")
+    except Exception as e:
+        print("Encountered a problem when adding file", e) 
+
+def v_task():
+    try:
+        file = open("task.txt", "r")
+        print(file.read())
+        file.close()
+    except FileNotFoundError:
+        print("Encountered a problem when reading file.")
+
+def menu():
+    while True:
+        print("\n=== Task Handler ===")
+        print("1. Add task")
+        print("2. View task")
+        print("3. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            a_task()
+        elif choice == "2":
+            v_task()
+        elif choice == "3":
+            print("Exiting Program.....")
+            break
+        else:
+            print("Invalid please enter no. (1-3)")
+
+
+c_file()
+menu()
